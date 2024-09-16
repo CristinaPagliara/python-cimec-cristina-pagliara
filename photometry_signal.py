@@ -27,6 +27,7 @@ params = {
 raw_data, header = import_edr(str(edr_file))
 
 #%%
+# LP: comments!
 fs= 1. / header['DT']
 
 photometry_signal=preprocess_photometrydata(fs,raw_data[:,params['rawSignal']], params['freqRangeSignal'],window=15)
