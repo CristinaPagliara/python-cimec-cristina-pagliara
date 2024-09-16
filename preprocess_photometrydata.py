@@ -11,7 +11,7 @@ from scipy.signal import find_peaks, filtfilt, hilbert, butter
 #%%
 def preprocess_photometrydata(fs,raw_data, freqRange,window=15):
     '''
-    Parameters
+    Parameters  # LP: you could have at least filled the automatically generated docstring ;)
     ----------
     fs : TYPE
         DESCRIPTION.
@@ -29,6 +29,7 @@ def preprocess_photometrydata(fs,raw_data, freqRange,window=15):
     freq, power_spectrum = signal.welch(raw_data, window='hann', fs=fs, nperseg=fs*30, detrend='constant', return_onesided=True, scaling='density', axis=-1, average='mean')
     
     
+    # LP comments!
     indices = np.where((freq > freqRange[0])&(freq < freqRange[1]))
     power_spectrum_data=power_spectrum[indices[0]]
     freq_data=freq[indices[0]]
